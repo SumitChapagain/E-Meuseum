@@ -1,0 +1,122 @@
+/* Basic Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+}
+
+nav {
+    background: #282c34;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    position: relative;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: rgba(255, 127, 80, 0.1);
+    border-radius: 4px;
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff7f50;
+    transition: width 0.4s ease;
+}
+
+ul li a:hover::after,
+ul li a.active::after {
+    width: 100%;
+}
+
+ul li:hover>ul {
+    display: block;
+}
+
+ul li ul {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #444;
+    border-radius: 5px;
+    padding: 5px 0;
+    z-index: 10;
+}
+
+ul li ul li {
+    min-width: 150px;
+}
+
+ul li ul li a {
+    padding: 10px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+ul li ul li a:hover {
+    color: #ff7f50;
+}
+
+
+/* Slash Animation and Positioning */
+
+ul li a span {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+ul li a span::before {
+    content: "/";
+    margin-right: 8px;
+    color: #ff7f50;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+ul li a:hover span::before,
+ul li a.active span::before {
+    transform: translateY(0);
+    opacity: 1;
+}

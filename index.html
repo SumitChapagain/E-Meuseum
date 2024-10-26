@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nihil quo vero voluptatem enim exercitationem culpa veritatis, a optio esse possimus commodi ducimus provident nesciunt maxime laboriosam accusantium sunt praesentium!</p>
+    <title>Top Navbar with Positioned Slash</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="activateLink(this)"><span>Home</span></a></li>
+            <li>
+                <a href="#about" onclick="activateLink(this)"><span>About Us</span></a>
+                <ul>
+                    <li><a href="#know-about-us" onclick="activateLink(this)">Know About Us</a></li>
+                    <li><a href="#about-this-site" onclick="activateLink(this)">About This Site</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#exhibits" onclick="activateLink(this)"><span>Exhibits</span></a>
+                <ul>
+                    <li><a href="#exhibit-1" onclick="activateLink(this)">Exhibit 1</a></li>
+                    <li><a href="#exhibit-2" onclick="activateLink(this)">Exhibit 2</a></li>
+                    <li><a href="#exhibit-3" onclick="activateLink(this)">Exhibit 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" onclick="activateLink(this)"><span>Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function activateLink(element) {
+            document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+
 </body>
+
 </html>
